@@ -8,30 +8,30 @@ import { NavigationStart, Router } from "@angular/router";
   styleUrls: ["./tax-calculator.component.scss"],
 })
 export class TaxCalculatorComponent implements OnInit {
-  // public taxForm: FormGroup;
-  // public taxChildRoutes: string[] = [
-  //   "/tax-calculator/basicDetails",
-  //   "/tax-calculator/investments",
-  //   "/tax-calculator/summary",
-  // ];
-  // public currentRoute: string;
-  // constructor(private fb: FormBuilder, private router: Router,) {}
+  public taxForm: FormGroup;
+  public taxChildRoutes: string[] = [
+    "/tax-calculator/basicDetails",
+    "/tax-calculator/investments",
+    "/tax-calculator/summary",
+  ];
+  public currentRoute: string;
+  constructor(private fb: FormBuilder, private router: Router,) {}
 
   ngOnInit() {
-    // this.router.events.subscribe((event) => {
-    //   if (event instanceof NavigationStart) {
-    //     this.currentRoute = event.url;
-    //   }
-    // });
-    // this.taxForm = this.fb.group({
-    //   basicDetails: this.fb.group({
-    //     annualIncome: ["", Validators.required],
-    //     name: ["", Validators.required],
-    //   }),
-    //   investmentDetails: this.fb.group({
-    //     monthlyRent: [""],
-    //     rentAllowance: [""],
-    //   }),
-    // });
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.currentRoute = event.url;
+      }
+    });
+    this.taxForm = this.fb.group({
+      basicDetails: this.fb.group({
+        annualIncome: ["", Validators.required],
+        name: ["", Validators.required],
+      }),
+      investmentDetails: this.fb.group({
+        monthlyRent: [""],
+        rentAllowance: [""],
+      }),
+    });
   }
 }
