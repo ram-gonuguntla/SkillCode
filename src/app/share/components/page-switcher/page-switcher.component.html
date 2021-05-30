@@ -1,0 +1,18 @@
+<router-outlet></router-outlet>
+<div class="buttonRow">
+  <button
+    *ngIf="showBackBtn"
+    class="buttonRow__item buttonRow__back"
+    (click)="navigateTo('prev')"
+  >
+    Back
+  </button>
+  <button
+    *ngIf="showNextBtn"
+    class="buttonRow__item buttonRow__next"
+    [ngClass]="{ buttonRow__inactive: !form.valid }"
+    (click)="navigateTo('next')"
+  >
+    Next
+  </button>
+</div>

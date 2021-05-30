@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+header,
+footer {
+  padding: 15px;
+  font-size: 20px;
+  background-color: #454545;
+  color: #ffffff;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}
+
+.field {
+  display: block;
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+    b {
+      color: red;
+    }
+  }
+  &__input {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #454545;
+    height: 28px;
+    padding: 0 5px;
+    width: 100%;
+  }
+}

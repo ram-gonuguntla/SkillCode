@@ -1,0 +1,14 @@
+[
+  {
+    "slabValue": 1500000,
+    "slabPerc": 30
+  },
+  {
+    "slabValue": 1000000,
+    "slabPerc": 20
+  },
+  {
+    "slabValue": 500000,
+    "slabPerc": 10
+  }
+]

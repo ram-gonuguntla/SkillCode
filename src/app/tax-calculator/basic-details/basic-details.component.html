@@ -1,0 +1,14 @@
+<form [formGroup]="parentFrom">
+  <app-text-field
+    [placeholder]="'Enter Your Name'"
+    [required]="true"
+    [label]="'Tax Payer Name'"
+    [control]="basicDetailsFG.get('name')"
+  ></app-text-field>
+  <app-number-field
+    [placeholder]="'Enter Amount'"
+    [required]="true"
+    [label]="'Annual Income'"
+    [control]="basicDetailsFG.get('annualIncome')"
+  ></app-number-field>
+</form>

@@ -1,0 +1,10 @@
+<div class="field">
+  <label class="field__label">{{ label }}<b *ngIf="required">*</b></label>
+  <input
+    class="field__input"
+    type="number"
+    [required]="required"
+    [placeholder]="placeholder"
+    [formControl]="control"
+  />
+</div>

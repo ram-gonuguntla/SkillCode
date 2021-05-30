@@ -1,0 +1,14 @@
+<form [formGroup]="parentFrom">
+  <app-number-field
+    [placeholder]="'Enter Amount'"
+    [required]="false"
+    [label]="'Monthly House Rent'"
+    [control]="investmentFG.get('monthlyRent')"
+  ></app-number-field>
+  <app-number-field
+    [placeholder]="'Enter Amount'"
+    [required]="false"
+    [label]="'Monthly House Rent Allowance'"
+    [control]="investmentFG.get('rentAllowance')"
+  ></app-number-field>
+</form>
