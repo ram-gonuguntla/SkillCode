@@ -11,6 +11,7 @@ import { taxFControllers } from "../tax.model";
   styleUrls: ["./summary-details.component.scss"],
 })
 export class SummaryDetailsComponent implements OnInit, OnDestroy {
+  public userName;
   public parentFrom;
   public taxValue: string;
   private taxControllers: taxFControllers;
