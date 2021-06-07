@@ -10,5 +10,9 @@
   {
     "slabValue": 500000,
     "slabPerc": 10
+  },
+  {
+    "slabValue": 250000,
+    "slabPerc": 5
   }
 ]
