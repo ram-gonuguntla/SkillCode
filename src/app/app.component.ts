@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private swUpdate: SwUpdate, private _snackBar: MatSnackBar) {
     this.swUpdate.available.subscribe((event) => {
       console.log(event, "event");
-      let snackBarRef = this._snackBar.open("Update Latest Version", "OK");
+      const snackBarRef = this._snackBar.open("Update Latest Version", "OK");
       snackBarRef.onAction().subscribe(() => {
         window.location.reload();
       });

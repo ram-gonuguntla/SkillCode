@@ -12,7 +12,7 @@ export class SharedService {
     return this.http.get(url);
   }
 
-  postHttp(url: string, req: any) {
+  postHttp(url: string, req: string) {
     return this.http.post(url, req);
   }
 }
