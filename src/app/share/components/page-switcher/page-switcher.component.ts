@@ -20,7 +20,7 @@ export class PageSwitcherComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private store: Store<{ navigation: any }>
+    private store: Store<{ navigation: boolean }>
   ) {}
 
   ngOnInit() {

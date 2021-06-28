@@ -1,0 +1,2623 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "basicFCs",
+            "id": "interface-basicFCs-94732c45d4f7c1f54beb0df6853afa59",
+            "file": "src/app/tax-calculator/tax.model.ts",
+            "type": "interface",
+            "sourceCode": "export interface taxFControllers {\n  basicDetails: basicFCs;\n  investmentDetails: investmentFCs;\n}\n\nexport interface basicFCs {\n  annualIncome: number;\n}\n\nexport interface investmentFCs {\n  monthlyRent: number;\n  rentAllowance: number;\n}\n",
+            "properties": [
+                {
+                    "name": "annualIncome",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "investmentFCs",
+            "id": "interface-investmentFCs-94732c45d4f7c1f54beb0df6853afa59",
+            "file": "src/app/tax-calculator/tax.model.ts",
+            "type": "interface",
+            "sourceCode": "export interface taxFControllers {\n  basicDetails: basicFCs;\n  investmentDetails: investmentFCs;\n}\n\nexport interface basicFCs {\n  annualIncome: number;\n}\n\nexport interface investmentFCs {\n  monthlyRent: number;\n  rentAllowance: number;\n}\n",
+            "properties": [
+                {
+                    "name": "monthlyRent",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "rentAllowance",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "taxFControllers",
+            "id": "interface-taxFControllers-94732c45d4f7c1f54beb0df6853afa59",
+            "file": "src/app/tax-calculator/tax.model.ts",
+            "type": "interface",
+            "sourceCode": "export interface taxFControllers {\n  basicDetails: basicFCs;\n  investmentDetails: investmentFCs;\n}\n\nexport interface basicFCs {\n  annualIncome: number;\n}\n\nexport interface investmentFCs {\n  monthlyRent: number;\n  rentAllowance: number;\n}\n",
+            "properties": [
+                {
+                    "name": "basicDetails",
+                    "type": "basicFCs",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "investmentDetails",
+                    "type": "investmentFCs",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "SharedService",
+            "id": "injectable-SharedService-d5158d0ad30e657e39f527d04272cf80",
+            "file": "src/app/share/shared.service.ts",
+            "properties": [
+                {
+                    "name": "baseUrl",
+                    "defaultValue": "\"\"",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getHttp",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 11,
+                    "jsdoctags": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "postHttp",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string"
+                        },
+                        {
+                            "name": "req",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 15,
+                    "jsdoctags": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "req",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { HttpClient } from \"@angular/common/http\";\nimport { Injectable } from \"@angular/core\";\n\n@Injectable({\n  providedIn: \"root\",\n})\nexport class SharedService {\n  private baseUrl = \"\";\n  constructor(private http: HttpClient) {}\n\n  getHttp(url: string) {\n    return this.http.get(url);\n  }\n\n  postHttp(url: string, req: any) {\n    return this.http.post(url, req);\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "classes": [
+        {
+            "name": "AppPage",
+            "id": "class-AppPage-62f9896d6c2a180da38b326751c9a4c2",
+            "file": "e2e/src/app.po.ts",
+            "type": "class",
+            "sourceCode": "import { browser, by, element } from \"protractor\";\n\nexport class AppPage {\n  navigateTo() {\n    return browser.get(browser.baseUrl) as Promise<any>;\n  }\n\n  getTitleText() {\n    return element(by.css(\"app-root h1\")).getText() as Promise<string>;\n  }\n}\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getTitleText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 8
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "Field",
+            "id": "class-Field-b00f69c050736043dd592c36c93dbf48",
+            "file": "src/app/share/field.ts",
+            "type": "class",
+            "sourceCode": "import { Input } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\n\nexport class Field {\n  @Input() public placeholder: string;\n  @Input() public label: string;\n  @Input() public required: boolean;\n  @Input() public value: string;\n  @Input() public control: FormControl;\n}\n",
+            "properties": [],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [
+                {
+                    "name": "control",
+                    "line": 9,
+                    "type": "FormControl"
+                },
+                {
+                    "name": "label",
+                    "line": 6,
+                    "type": "string"
+                },
+                {
+                    "name": "placeholder",
+                    "line": 5,
+                    "type": "string"
+                },
+                {
+                    "name": "required",
+                    "line": 7,
+                    "type": "boolean"
+                },
+                {
+                    "name": "value",
+                    "line": 8,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-090895374b2f6148dc308585c168d447",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "\"SkillItCode\"",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\r\nimport { SwUpdate } from \"@angular/service-worker\";\r\nimport { MatSnackBar } from \"@angular/material/snack-bar\";\r\n\r\n@Component({\r\n  selector: \"app-root\",\r\n  templateUrl: \"./app.component.html\",\r\n  styleUrls: [\"./app.component.scss\"],\r\n})\r\nexport class AppComponent {\r\n  title = \"SkillItCode\";\r\n\r\n  constructor(private swUpdate: SwUpdate, private _snackBar: MatSnackBar) {\r\n    this.swUpdate.available.subscribe((event) => {\r\n      console.log(event, \"event\");\r\n      let snackBarRef = this._snackBar.open(\"Update Latest Version\", \"OK\");\r\n      snackBarRef.onAction().subscribe(() => {\r\n        window.location.reload();\r\n      });\r\n    });\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".route-element {\n  min-height: calc(100vh - 121px);\n  padding: 15px;\n}\n",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "swUpdate",
+                        "type": "SwUpdate"
+                    },
+                    {
+                        "name": "_snackBar",
+                        "type": "MatSnackBar"
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "swUpdate",
+                        "type": "SwUpdate",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "_snackBar",
+                        "type": "MatSnackBar",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<app-header></app-header>\n<div class=\"route-element\">\n  <router-outlet></router-outlet>\n</div>\n<app-footer></app-footer>\n"
+        },
+        {
+            "name": "BasicDetailsComponent",
+            "id": "component-BasicDetailsComponent-6cda8f2abc145dfae2bebf110492cea3",
+            "file": "src/app/tax-calculator/basic-details/basic-details.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-basic-details",
+            "styleUrls": [
+                "./basic-details.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./basic-details.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "parentFrom",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from \"@angular/core\";\nimport { ControlContainer, FormControl, FormGroup } from \"@angular/forms\";\nimport { SharedService } from \"src/app/share/shared.service\";\n\n@Component({\n  selector: \"app-basic-details\",\n  templateUrl: \"./basic-details.component.html\",\n  styleUrls: [\"./basic-details.component.scss\"],\n})\nexport class BasicDetailsComponent implements OnInit {\n  public parentFrom;\n  constructor(private controlContainer: ControlContainer) {}\n\n  ngOnInit() {\n    this.parentFrom = this.controlContainer.control;\n  }\n\n  get basicDetailsFG() {\n    return this.parentFrom.controls.basicDetails;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./basic-details.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "controlContainer",
+                        "type": "ControlContainer"
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "controlContainer",
+                        "type": "ControlContainer",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "basicDetailsFG": {
+                    "name": "basicDetailsFG",
+                    "getSignature": {
+                        "name": "basicDetailsFG",
+                        "type": "",
+                        "returnType": "",
+                        "line": 18
+                    }
+                }
+            },
+            "templateData": "<form [formGroup]=\"parentFrom\">\n  <app-text-field\n    [placeholder]=\"'Enter Your Name'\"\n    [required]=\"true\"\n    [label]=\"'Tax Payer Name'\"\n    [control]=\"basicDetailsFG.get('name')\"\n  ></app-text-field>\n  <app-number-field\n    [placeholder]=\"'Enter Amount'\"\n    [required]=\"true\"\n    [label]=\"'Annual Income'\"\n    [control]=\"basicDetailsFG.get('annualIncome')\"\n  ></app-number-field>\n</form>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-642c6c4e474cd5a0ac760dfda26b2fc9",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 26,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 40
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 20
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 32,
+                    "type": "\"small\" | \"medium\" | \"large\""
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 46,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 48
+                    }
+                }
+            }
+        },
+        {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-003a6a7528957fbb67103451900599a1",
+            "file": "src/app/share/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 10
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from \"@angular/core\";\n\n@Component({\n  selector: \"app-footer\",\n  templateUrl: \"./footer.component.html\",\n})\nexport class FooterComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit() {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 7
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<footer>Just sKill the Code</footer>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-246e2a69dc126a3bd76c6328dd3b93e2",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "line": 53,
+                    "type": "unknown"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 62,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 56,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 59,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-dd76cf3299f5a4e221f862119c024a75-1",
+            "file": "src/app/share/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 10
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from \"@angular/core\";\n\n@Component({\n  selector: \"app-header\",\n  templateUrl: \"./header.component.html\",\n})\nexport class HeaderComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit() {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 7
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "HeaderComponent-1",
+            "templateData": "<header>Just sKill the Code</header>\n"
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-a3b33d244ffa090302740b88708bfde4",
+            "file": "src/app/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [
+                "./home.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from \"@angular/core\";\n\n@Component({\n  selector: \"app-home\",\n  templateUrl: \"./home.component.html\",\n  styleUrls: [\"./home.component.scss\"],\n})\nexport class HomeComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit() {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./home.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<nav>\n  <a [routerLink]=\"['/tax-calculator']\">Tax Calculator</a>\n</nav>\n"
+        },
+        {
+            "name": "InvestmentDetailsComponent",
+            "id": "component-InvestmentDetailsComponent-e46349ef8789394e43751eed8df60709",
+            "file": "src/app/tax-calculator/investment-details/investment-details.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-investment-details",
+            "styleUrls": [
+                "./investment-details.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./investment-details.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "parentFrom",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from \"@angular/core\";\nimport { ControlContainer } from \"@angular/forms\";\n\n@Component({\n  selector: \"app-investment-details\",\n  templateUrl: \"./investment-details.component.html\",\n  styleUrls: [\"./investment-details.component.scss\"],\n})\nexport class InvestmentDetailsComponent implements OnInit {\n  public parentFrom;\n  constructor(private controlContainer: ControlContainer) {}\n\n  ngOnInit() {\n    this.parentFrom = this.controlContainer.control;\n  }\n\n  get investmentFG() {\n    return this.parentFrom.controls.investmentDetails;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./investment-details.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "controlContainer",
+                        "type": "ControlContainer"
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "controlContainer",
+                        "type": "ControlContainer",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "investmentFG": {
+                    "name": "investmentFG",
+                    "getSignature": {
+                        "name": "investmentFG",
+                        "type": "",
+                        "returnType": "",
+                        "line": 17
+                    }
+                }
+            },
+            "templateData": "<form [formGroup]=\"parentFrom\">\n  <app-number-field\n    [placeholder]=\"'Enter Amount'\"\n    [required]=\"false\"\n    [label]=\"'Monthly House Rent'\"\n    [control]=\"investmentFG.get('monthlyRent')\"\n  ></app-number-field>\n  <app-number-field\n    [placeholder]=\"'Enter Amount'\"\n    [required]=\"false\"\n    [label]=\"'Monthly House Rent Allowance'\"\n    [control]=\"investmentFG.get('rentAllowance')\"\n  ></app-number-field>\n</form>\n"
+        },
+        {
+            "name": "NumberFieldComponent",
+            "id": "component-NumberFieldComponent-1960b332053235235419a7e3907f5204",
+            "file": "src/app/share/components/number-field/number-field.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-number-field",
+            "styleUrls": [
+                "./number-field.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./number-field.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "control",
+                    "line": 9,
+                    "type": "FormControl",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                },
+                {
+                    "name": "label",
+                    "line": 6,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                },
+                {
+                    "name": "placeholder",
+                    "line": 5,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                },
+                {
+                    "name": "required",
+                    "line": 7,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                },
+                {
+                    "name": "value",
+                    "line": 8,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { Field } from \"../../field\";\n\n@Component({\n  selector: \"app-number-field\",\n  templateUrl: \"./number-field.component.html\",\n  styleUrls: [\"./number-field.component.scss\"],\n})\nexport class NumberFieldComponent extends Field {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./number-field.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": "Field",
+            "templateData": "<div class=\"field\">\n  <label class=\"field__label\">{{ label }}<b *ngIf=\"required\">*</b></label>\n  <input\n    class=\"field__input\"\n    type=\"number\"\n    [required]=\"required\"\n    [placeholder]=\"placeholder\"\n    [formControl]=\"control\"\n  />\n</div>\n"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-8f196770333aa216860a88c0b6b221aa",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "line": 64,
+                    "type": "unknown"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 73,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 67,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 70,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n\n// export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (\n//   <article>\n//     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />\n\n// );\n// Page.propTypes = {\n//   user: PropTypes.shape({}),\n//   onLogin: PropTypes.func.isRequired,\n//   onLogout: PropTypes.func.isRequired,\n//   onCreateAccount: PropTypes.func.isRequired,\n// };\n\n// Page.defaultProps = {\n//   user: null,\n// };\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nh2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\np {\n  margin: 1em 0;\n}\n\na {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nli {\n  margin-bottom: 8px;\n}\n\n.tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "PageSwitcherComponent",
+            "id": "component-PageSwitcherComponent-5db5fd806185f87c44bcf5082b948049",
+            "file": "src/app/share/components/page-switcher/page-switcher.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-page-switcher",
+            "styleUrls": [
+                "./page-switcher.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./page-switcher.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "form",
+                    "line": 16,
+                    "type": "FormGroup"
+                },
+                {
+                    "name": "nextBtnDisabled",
+                    "line": 14,
+                    "type": "boolean"
+                },
+                {
+                    "name": "preBtnDisabled",
+                    "line": 13,
+                    "type": "boolean"
+                },
+                {
+                    "name": "taxChildRoutes",
+                    "line": 15,
+                    "type": "string[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "currentRoute",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "showBackBtn",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "showNextBtn",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "navigateTo",
+                    "args": [
+                        {
+                            "name": "navType",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "navType",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26
+                },
+                {
+                    "name": "showPrevNextBtn",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from \"@angular/core\";\nimport { FormBuilder, FormGroup } from \"@angular/forms\";\nimport { NavigationStart, Router } from \"@angular/router\";\nimport { Store } from \"@ngrx/store\";\nimport { updateNavState } from \"src/app/tax-calculator/tax-actions\";\n\n@Component({\n  selector: \"app-page-switcher\",\n  templateUrl: \"./page-switcher.component.html\",\n  styleUrls: [\"./page-switcher.component.scss\"],\n})\nexport class PageSwitcherComponent implements OnInit {\n  @Input() public preBtnDisabled: boolean;\n  @Input() public nextBtnDisabled: boolean;\n  @Input() private taxChildRoutes: string[];\n  @Input() public form: FormGroup;\n  public showBackBtn: boolean;\n  public showNextBtn: boolean;\n  private currentRoute: string;\n  constructor(\n    private fb: FormBuilder,\n    private router: Router,\n    private store: Store<{ navigation: any }>\n  ) {}\n\n  ngOnInit() {\n    this.currentRoute = window.location.pathname;\n    this.showPrevNextBtn();\n    this.router.events.subscribe((event) => {\n      if (event instanceof NavigationStart) {\n        this.currentRoute = event.url;\n        this.showPrevNextBtn();\n        this.store.dispatch(updateNavState({ navigation: true }));\n      }\n    });\n  }\n\n  private showPrevNextBtn() {\n    this.showBackBtn =\n      this.currentRoute !== this.taxChildRoutes[0] &&\n      this.taxChildRoutes.includes(this.currentRoute);\n    this.showNextBtn =\n      this.currentRoute !==\n        this.taxChildRoutes[this.taxChildRoutes.length - 1] &&\n      this.taxChildRoutes.includes(this.currentRoute);\n  }\n\n  public navigateTo(navType: string) {\n    const currentRouteInd =\n      navType === \"next\" ? this.findRouteIndex + 1 : this.findRouteIndex - 1;\n    const url = this.taxChildRoutes[currentRouteInd];\n    this.router.navigateByUrl(url);\n  }\n\n  private get findRouteIndex() {\n    return this.taxChildRoutes.findIndex(\n      (route) => route === this.currentRoute\n    );\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".buttonRow {\n  &__item {\n    background-color: #454545;\n    color: #ffffff;\n    text-transform: uppercase;\n    font-size: 13px;\n    padding: 10px;\n    margin: 10px;\n    box-shadow: none;\n    border: none;\n    border-radius: 5px;\n    cursor: pointer;\n  }\n  &__inactive {\n    background-color: #e4e4e4;\n    pointer-events: none;\n  }\n}\n",
+                    "styleUrl": "./page-switcher.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder"
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router"
+                    },
+                    {
+                        "name": "store",
+                        "type": "Store<literal type>"
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "store",
+                        "type": "Store<literal type>",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "findRouteIndex": {
+                    "name": "findRouteIndex",
+                    "getSignature": {
+                        "name": "findRouteIndex",
+                        "type": "",
+                        "returnType": "",
+                        "line": 55
+                    }
+                }
+            },
+            "templateData": "<router-outlet></router-outlet>\n<div class=\"buttonRow\">\n  <button\n    *ngIf=\"showBackBtn\"\n    class=\"buttonRow__item buttonRow__back\"\n    (click)=\"navigateTo('prev')\"\n  >\n    Back\n  </button>\n  <button\n    *ngIf=\"showNextBtn\"\n    class=\"buttonRow__item buttonRow__next\"\n    [ngClass]=\"{ buttonRow__inactive: !form.valid }\"\n    (click)=\"navigateTo('next')\"\n  >\n    Next\n  </button>\n</div>\n"
+        },
+        {
+            "name": "SummaryDetailsComponent",
+            "id": "component-SummaryDetailsComponent-5d5a9af62070f43fcab389f0101dbdfe",
+            "file": "src/app/tax-calculator/summary-details/summary-details.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-summary-details",
+            "styleUrls": [
+                "./summary-details.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./summary-details.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "parentFrom",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "slabsInfo",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "taxControllers",
+                    "type": "taxFControllers",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "taxValue",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "userName",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getExecemptionRentAllowance",
+                    "args": [
+                        {
+                            "name": "monthlyRent",
+                            "type": "number"
+                        },
+                        {
+                            "name": "rentAllowance",
+                            "type": "number"
+                        },
+                        {
+                            "name": "annualIncome",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 48,
+                    "jsdoctags": [
+                        {
+                            "name": "monthlyRent",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "rentAllowance",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "annualIncome",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getValueUsingPerc",
+                    "args": [
+                        {
+                            "name": "val",
+                            "type": "number"
+                        },
+                        {
+                            "name": "per",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 83,
+                    "modifierKind": [
+                        112
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "val",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "per",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 88
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24
+                },
+                {
+                    "name": "slabsCalculations",
+                    "args": [
+                        {
+                            "name": "sal",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 66,
+                    "modifierKind": [
+                        112
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "sal",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { formatNumber } from \"@angular/common\";\r\nimport { Component, OnDestroy, OnInit } from \"@angular/core\";\r\nimport { ControlContainer, FormGroup } from \"@angular/forms\";\r\nimport { untilDestroyed } from \"ngx-take-until-destroy\";\r\nimport { SharedService } from \"src/app/share/shared.service\";\r\nimport { taxFControllers } from \"../tax.model\";\r\n\r\n@Component({\r\n  selector: \"app-summary-details\",\r\n  templateUrl: \"./summary-details.component.html\",\r\n  styleUrls: [\"./summary-details.component.scss\"],\r\n})\r\nexport class SummaryDetailsComponent implements OnInit, OnDestroy {\r\n  public userName;\r\n  public parentFrom;\r\n  public taxValue: string;\r\n  private taxControllers: taxFControllers;\r\n  private slabsInfo: any;\r\n  constructor(\r\n    private controlContainer: ControlContainer,\r\n    private sharedService: SharedService\r\n  ) {}\r\n\r\n  ngOnInit() {\r\n    this.parentFrom = this.controlContainer.control as FormGroup;\r\n    this.taxControllers = this.parentFrom.getRawValue();\r\n    const annualIncome: number = this.taxControllers.basicDetails.annualIncome;\r\n    const monthlyRent: number =\r\n      this.taxControllers.investmentDetails.monthlyRent;\r\n    const rentAllowance: number =\r\n      this.taxControllers.investmentDetails.rentAllowance;\r\n    const actualAllowedRentAllowance: number = this.getExecemptionRentAllowance(\r\n      monthlyRent,\r\n      rentAllowance,\r\n      annualIncome\r\n    );\r\n    this.sharedService\r\n      .getHttp(\"assets/tax-slabs.json\")\r\n      .pipe(untilDestroyed(this))\r\n      .subscribe((data) => {\r\n        this.slabsInfo = data;\r\n        const result =\r\n          this.slabsCalculations(annualIncome) - actualAllowedRentAllowance;\r\n        this.taxValue = formatNumber(result, \"en-US\", \".0-0\");\r\n      });\r\n  }\r\n\r\n  getExecemptionRentAllowance(\r\n    monthlyRent: number,\r\n    rentAllowance: number,\r\n    annualIncome: number\r\n  ): number {\r\n    const basicPay = this.getValueUsingPerc(annualIncome, 50);\r\n    const considerableRent =\r\n      rentAllowance && monthlyRent && monthlyRent > rentAllowance\r\n        ? rentAllowance\r\n        : monthlyRent;\r\n    const tenPercBasicPay: number = this.getValueUsingPerc(basicPay, 10);\r\n    const actualRentExcemption =\r\n      considerableRent && considerableRent * 12 > tenPercBasicPay\r\n        ? considerableRent * 12 - tenPercBasicPay\r\n        : 0;\r\n    return actualRentExcemption;\r\n  }\r\n\r\n  private slabsCalculations(sal: number): number {\r\n    let taxValue = 0;\r\n    let remaingSalary: number = sal;\r\n    this.slabsInfo.forEach((val, index) => {\r\n      if (remaingSalary >= val.slabValue) {\r\n        const getval = this.slabsInfo[index + 1]\r\n          ? remaingSalary - this.slabsInfo[index + 1].slabValue\r\n          : remaingSalary;\r\n        taxValue = taxValue + this.getValueUsingPerc(getval, val.slabPerc);\r\n        remaingSalary = this.slabsInfo[index + 1]\r\n          ? this.slabsInfo[index + 1].slabValue\r\n          : 0;\r\n      }\r\n    });\r\n\r\n    return taxValue;\r\n  }\r\n  private getValueUsingPerc(val: number, per: number): number {\r\n    const result: number = (per * val) / 100;\r\n    return result;\r\n  }\r\n\r\n  ngOnDestroy() {\r\n    // untildestroyed required this\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./summary-details.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "controlContainer",
+                        "type": "ControlContainer"
+                    },
+                    {
+                        "name": "sharedService",
+                        "type": "SharedService"
+                    }
+                ],
+                "line": 18,
+                "jsdoctags": [
+                    {
+                        "name": "controlContainer",
+                        "type": "ControlContainer",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "sharedService",
+                        "type": "SharedService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<div>\n  Dear {{ userName ? userName : \"User\" }}, As Per The State Tax Your Tax\n  deductions would be: <b>{{ taxValue }}</b>\n</div>\n"
+        },
+        {
+            "name": "TaxCalculatorComponent",
+            "id": "component-TaxCalculatorComponent-572242debfa2ad010492624b28910086",
+            "file": "src/app/tax-calculator/tax-calculator/tax-calculator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tax-calculator",
+            "styleUrls": [
+                "./tax-calculator.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tax-calculator.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "currentRoute",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "taxChildRoutes",
+                    "defaultValue": "[\r\n    \"/tax-calculator/basicDetails\",\r\n    \"/tax-calculator/investments\",\r\n    \"/tax-calculator/summary\",\r\n  ]",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "taxForm",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from \"@angular/core\";\r\nimport { FormBuilder, FormGroup, Validators } from \"@angular/forms\";\r\nimport { NavigationStart, Router } from \"@angular/router\";\r\n\r\n@Component({\r\n  selector: \"app-tax-calculator\",\r\n  templateUrl: \"./tax-calculator.component.html\",\r\n  styleUrls: [\"./tax-calculator.component.scss\"],\r\n})\r\nexport class TaxCalculatorComponent implements OnInit {\r\n  public taxForm: FormGroup;\r\n  public taxChildRoutes: string[] = [\r\n    \"/tax-calculator/basicDetails\",\r\n    \"/tax-calculator/investments\",\r\n    \"/tax-calculator/summary\",\r\n  ];\r\n  public currentRoute: string;\r\n  constructor(private fb: FormBuilder, private router: Router,) {}\r\n\r\n  ngOnInit() {\r\n    this.router.events.subscribe((event) => {\r\n      if (event instanceof NavigationStart) {\r\n        this.currentRoute = event.url;\r\n      }\r\n    });\r\n    this.taxForm = this.fb.group({\r\n      basicDetails: this.fb.group({\r\n        annualIncome: [\"\", Validators.required],\r\n        name: [\"\", Validators.required],\r\n      }),\r\n      investmentDetails: this.fb.group({\r\n        monthlyRent: [\"\"],\r\n        rentAllowance: [\"\"],\r\n      }),\r\n    });\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  width: 35%;\n  margin: 0 auto;\n}\n\n@media screen and (max-width: 767px) {\n  .wrapper {\n    width: 100%;\n    padding: 15px;\n  }\n}\n",
+                    "styleUrl": "./tax-calculator.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder"
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router"
+                    }
+                ],
+                "line": 17,
+                "jsdoctags": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"wrapper\">\r\n  <div *ngIf=\"!taxChildRoutes.includes(this.currentRoute)\">\r\n    <h2>Do You Want Calculate Your Annual Taxes?</h2>\r\n    <div>\r\n      <a [routerLink]=\"['/tax-calculator/basicDetails']\">Click Here</a>\r\n    </div>\r\n  </div>\r\n  <div>\r\n    <form [formGroup]=\"taxForm\">\r\n      <app-page-switcher [taxChildRoutes]=\"taxChildRoutes\" [form]=\"taxForm\"></app-page-switcher>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "TextFieldComponent",
+            "id": "component-TextFieldComponent-bbd374c9495bcfbd851f22a5e30356d7",
+            "file": "src/app/share/components/text-field/text-field.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-text-field",
+            "styleUrls": [
+                "./text-field.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./text-field.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "control",
+                    "line": 9,
+                    "type": "FormControl",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                },
+                {
+                    "name": "label",
+                    "line": 6,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                },
+                {
+                    "name": "placeholder",
+                    "line": 5,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                },
+                {
+                    "name": "required",
+                    "line": 7,
+                    "type": "boolean",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                },
+                {
+                    "name": "value",
+                    "line": 8,
+                    "type": "string",
+                    "inheritance": {
+                        "file": "Field"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { Field } from \"../../field\";\n\n@Component({\n  selector: \"app-text-field\",\n  templateUrl: \"./text-field.component.html\",\n  styleUrls: [\"./text-field.component.scss\"],\n})\nexport class TextFieldComponent extends Field {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./text-field.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": "Field",
+            "templateData": "<div class=\"field\">\n  <label class=\"field__label\">{{ label }}<b *ngIf=\"required\">*</b></label>\n  <input\n    class=\"field__input\"\n    type=\"text\"\n    [required]=\"required\"\n    [placeholder]=\"placeholder\"\n    [formControl]=\"control\"\n  />\n</div>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "HomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "ShareModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ShareModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        },
+                        {
+                            "name": "HeaderComponent"
+                        },
+                        {
+                            "name": "NumberFieldComponent"
+                        },
+                        {
+                            "name": "PageSwitcherComponent"
+                        },
+                        {
+                            "name": "TextFieldComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        },
+                        {
+                            "name": "NumberFieldComponent"
+                        },
+                        {
+                            "name": "PageSwitcherComponent"
+                        },
+                        {
+                            "name": "TextFieldComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TaxCalculatorModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "BasicDetailsComponent"
+                        },
+                        {
+                            "name": "InvestmentDetailsComponent"
+                        },
+                        {
+                            "name": "SummaryDetailsComponent"
+                        },
+                        {
+                            "name": "TaxCalculatorComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ShareModule"
+                        },
+                        {
+                            "name": "TaxCalculatorRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TaxCalculatorRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "_createTaxReducer",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/tax-calculator/tax-reducer.ts",
+                "type": "",
+                "defaultValue": "createReducer(\n  taxNavigation,\n  on(updateNavState, (state, { navigation }) => ({\n    ...state,\n    navigation: navigation,\n  }))\n)"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "",
+                "defaultValue": "require.context(\"./\", true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: false,\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true,\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "any"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "taxNavigation",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/tax-calculator/tax-state.ts",
+                "type": "object",
+                "defaultValue": "{\n  navigation: false,\n}"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "updateNavState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/tax-calculator/tax-actions.ts",
+                "type": "",
+                "defaultValue": "createAction(\n  \"updateNavState\",\n  props<{ navigation: boolean }>()\n)"
+            }
+        ],
+        "functions": [
+            {
+                "name": "TaxReducer",
+                "file": "src/app/tax-calculator/tax-reducer.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": [
+                    {
+                        "name": "state",
+                        "type": ""
+                    },
+                    {
+                        "name": "action",
+                        "type": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "state",
+                        "type": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "action",
+                        "type": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/tax-calculator/tax-reducer.ts": [
+                {
+                    "name": "_createTaxReducer",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/tax-calculator/tax-reducer.ts",
+                    "type": "",
+                    "defaultValue": "createReducer(\n  taxNavigation,\n  on(updateNavState, (state, { navigation }) => ({\n    ...state,\n    navigation: navigation,\n  }))\n)"
+                }
+            ],
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context(\"./\", true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "any"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n}"
+                }
+            ],
+            "src/stories/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "type": "Story<Page>",
+                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/app/tax-calculator/tax-state.ts": [
+                {
+                    "name": "taxNavigation",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/tax-calculator/tax-state.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  navigation: false,\n}"
+                }
+            ],
+            "src/app/tax-calculator/tax-actions.ts": [
+                {
+                    "name": "updateNavState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/tax-calculator/tax-actions.ts",
+                    "type": "",
+                    "defaultValue": "createAction(\n  \"updateNavState\",\n  props<{ navigation: boolean }>()\n)"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "src/app/tax-calculator/tax-reducer.ts": [
+                {
+                    "name": "TaxReducer",
+                    "file": "src/app/tax-calculator/tax-reducer.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "state",
+                            "type": ""
+                        },
+                        {
+                            "name": "action",
+                            "type": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "state",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "action",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "",
+                        "component": "HomeComponent"
+                    },
+                    {
+                        "path": "tax-calculator",
+                        "loadChildren": "./tax-calculator/tax-calculator.module#TaxCalculatorModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/tax-calculator/tax-calculator-routing.module.ts",
+                                        "module": "TaxCalculatorRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "",
+                                                "component": "TaxCalculatorComponent",
+                                                "children": [
+                                                    {
+                                                        "path": "basicDetails",
+                                                        "component": "BasicDetailsComponent"
+                                                    },
+                                                    {
+                                                        "path": "investments",
+                                                        "component": "InvestmentDetailsComponent"
+                                                    },
+                                                    {
+                                                        "path": "summary",
+                                                        "component": "SummaryDetailsComponent"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "TaxCalculatorModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "**",
+                        "redirectTo": "",
+                        "pathMatch": "full"
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 2,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "e2e/src/app.po.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/share/components/number-field/number-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NumberFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/share/components/page-switcher/page-switcher.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageSwitcherComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/share/components/text-field/text-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/share/field.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Field",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/share/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/share/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/share/shared.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "SharedService",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/basic-details/basic-details.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BasicDetailsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/investment-details/investment-details.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InvestmentDetailsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/summary-details/summary-details.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SummaryDetailsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/tax-actions.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "updateNavState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/tax-calculator/tax-calculator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TaxCalculatorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/tax-reducer.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "TaxReducer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/tax-reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "_createTaxReducer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/tax-state.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "taxNavigation",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/tax.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "basicFCs",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/tax.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "investmentFCs",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tax-calculator/tax.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "taxFControllers",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

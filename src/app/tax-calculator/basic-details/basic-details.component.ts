@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { ControlContainer, FormControl, FormGroup } from "@angular/forms";
-import { SharedService } from "src/app/share/shared.service";
+import { Component, OnInit } from "@angular/core";
+import { ControlContainer } from "@angular/forms";
 
 @Component({
   selector: "app-basic-details",

@@ -5,6 +5,11 @@ import { untilDestroyed } from "ngx-take-until-destroy";
 import { SharedService } from "src/app/share/shared.service";
 import { taxFControllers } from "../tax.model";
 
+interface SlabInfo {
+  slabValue: number;
+  slabPerc: number;
+}
+
 @Component({
   selector: "app-summary-details",
   templateUrl: "./summary-details.component.html",
@@ -15,7 +20,7 @@ export class SummaryDetailsComponent implements OnInit, OnDestroy {
   public parentFrom;
   public taxValue: string;
   private taxControllers: taxFControllers;
-  private slabsInfo: any;
+  private slabsInfo: SlabInfo[];
   constructor(
     private controlContainer: ControlContainer,
     private sharedService: SharedService
@@ -37,7 +42,7 @@ export class SummaryDetailsComponent implements OnInit, OnDestroy {
     this.sharedService
       .getHttp("assets/tax-slabs.json")
       .pipe(untilDestroyed(this))
-      .subscribe((data) => {
+      .subscribe((data: SlabInfo[]) => {
         this.slabsInfo = data;
         const result =
           this.slabsCalculations(annualIncome) - actualAllowedRentAllowance;
